@@ -15,5 +15,5 @@ async def hello_get(request):
 app.router.add_post('/hello/', hello_post)
 app.router.add_get('/hello/', hello_get)
 
-port = int(os.env.get('PORT', 5030))
+port = int(os.environ.get('PORT', 5030))
 web.run_app(app, port=port)
