@@ -1,3 +1,4 @@
+import os
 from aiohttp import web
 
 app = web.Application()
@@ -14,5 +15,5 @@ async def hello_get(request):
 app.router.add_post('/hello/', hello_post)
 app.router.add_get('/hello/', hello_get)
 
-
-web.run_app(app, port=5030)
+port = int(os.env.get('PORT', 5030))
+web.run_app(app, port=port)
